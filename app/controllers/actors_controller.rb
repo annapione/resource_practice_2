@@ -1,10 +1,10 @@
 class ActorsController < ApplicationController
   def index
-    @actors = Actor.page(params[:page])
+    @actors = Actor.page(params[:page]).per(5)
   end
 
   def show
-    @actor = Actor.find(params[id])
+    @actor = Actor.find(params[:id])
   end
 
   def new_form
